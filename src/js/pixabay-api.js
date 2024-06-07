@@ -10,6 +10,9 @@ export default function fetchPictares(findPic) {
     });
     const url = `${baseUrl}${endPoint}?${params}`;
 
-    return fetch(url).then((res) => res.json());
+    return fetch(url)
+        .then((res) => res.json())
+        .catch(error => {
+            throw new Error (`HTTP error! status: ${response.status}`)});
 }
 

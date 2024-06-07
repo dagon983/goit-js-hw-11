@@ -42,6 +42,12 @@ form.addEventListener("submit", (event) => {
             captionDelay: 250
         });
         newLightBox.refresh();
+    })
+    .catch(error => {
+        iziToast.warning({
+            title: "Error",
+            message: `Something went wrong. ${error.message}`
+        })
     });
 });
 
